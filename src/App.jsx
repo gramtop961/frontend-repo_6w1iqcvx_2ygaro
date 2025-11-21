@@ -1,73 +1,49 @@
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Services from "./components/Services.jsx";
+import About from "./components/About.jsx";
+import Footer from "./components/Footer.jsx";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-white text-blue-900">
+      {/* Background framing – warm yellow instead of dark */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-white" />
+        <div className="absolute inset-x-0 top-0 h-[45vh] bg-gradient-to-b from-yellow-200 via-yellow-200/80 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[25vh] bg-gradient-to-t from-yellow-100 to-transparent" />
+      </div>
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+
+      {/* CTA Strip */}
+      <section className="relative py-16">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 to-yellow-200" />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="rounded-3xl p-8 md:p-12 bg-white/70 backdrop-blur border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.12)] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-3xl font-extrabold tracking-tight">Taste the FLAMES Blue signature.</h3>
+              <p className="mt-2 text-blue-900/70">Glossy reflections, smooth gradients, and studio-lit detail in every cup.</p>
             </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
+            <div className="flex items-center gap-4">
+              <button className="relative overflow-hidden px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 shadow-[0_12px_35px_rgba(37,99,235,0.55)]">
+                Reserve Now
+                <span className="absolute inset-0 bg-white/30 opacity-0 hover:opacity-100 transition-opacity" style={{ maskImage: "linear-gradient(60deg, transparent 40%, white 50%, transparent 60%)" }} />
+              </button>
+              <button className="px-6 py-3 rounded-full font-semibold text-blue-900 bg-white/80 backdrop-blur border border-blue-500/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_8px_24px_rgba(0,0,0,0.08)]">
+                Learn More
+              </button>
             </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
